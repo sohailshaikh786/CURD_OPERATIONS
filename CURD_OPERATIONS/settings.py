@@ -73,11 +73,16 @@ WSGI_APPLICATION = 'CURD_OPERATIONS.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+import os
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': os.getenv('postgresql://postgres:8GrnKi4UD1idQLcjSiL6@containers-us-west-32.railway.app:6067/railway'),
+        'NAME': os.getenv('railway'),
+        'USER': os.getenv('postgres'),
+        'PASSWORD': os.getenv('8GrnKi4UD1idQLcjSiL6'),
+        'HOST': os.getenv('containers-us-west-32.railway.app'),
+        'PORT': os.getenv(6067),
     }
 }
 
