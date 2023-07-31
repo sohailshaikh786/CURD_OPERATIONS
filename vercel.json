@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "CURD_OPERATIONS/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "CURD_OPERATIONS/wsgi.py"
+      }
+    ]
+}
